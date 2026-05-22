@@ -4126,16 +4126,35 @@ tw-columns {
 А отдельной формой разговора.
 
 [[Дальше-&gt;D7ENDSELECT]]</tw-passagedata><tw-passagedata pid="98" name="D7ENDSELECT" tags="" position="2325,1600" size="100,100">(if: $instability &gt;= 3 and $self &gt;= 3 and $syncLoss &gt;= 3)
-(if: $instability >= 3 and $self >= 3 and $syncLoss >= 3)[[ENDINGNULL]]
-(else-if: $trust >= 3 and $syncLoss >= 3)[[ENDINGSHARED]]
-(else-if: $trust >= 3)[[ENDINGANCHOR]]
-(else-if: $self >= 3)[[ENDINGLOOP]]
-(else-if: $syncLoss >= 3)[[ENDINGSILENT]]
-(else-if: $instability >= 3)[[ENDINGFRACTURED]]
-(else-if: $intervene >= 3)[[ENDINGOBSERVER]]
-(else-if: $worldAlign >= 3)[[ENDINGPEACE]]
-(else)[[ENDINGALIGNED]]
-]</tw-passagedata><tw-passagedata pid="99" name="ENDINGLOOP" tags="" position="2250,1725" size="100,100">Экран уже светится в темноте.
+{
+(if: $instability >= 3 and $self >= 3 and $syncLoss >= 3)[
+    (goto: "ENDINGNULL")
+]
+(else-if: $trust >= 3 and $syncLoss >= 3)[
+    (goto: "ENDINGSHARED")
+]
+(else-if: $trust >= 3)[
+    (goto: "ENDINGANCHOR")
+]
+(else-if: $self >= 3)[
+    (goto: "ENDINGLOOP")
+]
+(else-if: $syncLoss >= 3)[
+    (goto: "ENDINGSILENT")
+]
+(else-if: $instability >= 3)[
+    (goto: "ENDINGFRACTURED")
+]
+(else-if: $intervene >= 3)[
+    (goto: "ENDINGOBSERVER")
+]
+(else-if: $worldAlign >= 3)[
+    (goto: "ENDINGPEACE")
+]
+(else)[
+    (goto: "ENDINGALIGNED")
+]
+}</tw-passagedata><tw-passagedata pid="99" name="ENDINGLOOP" tags="" position="2250,1725" size="100,100">Экран уже светится в темноте.
 
 И на секунду тебе кажется,
 что утро ещё не начиналось.
